@@ -1,0 +1,11 @@
+.carrito{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.pokebola{
+    width: 50px;
+    padding: 5px;
+    border: 2px solid crimson;
+    border-radius: 40%;
+}
