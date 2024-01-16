@@ -1,0 +1,26 @@
+.CardItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgba(184, 135, 11, 0.473);
+    padding: 5px 0;
+    margin: 5%;
+
+}
+.ItemImg{
+    width: 250px;
+    height: 250px;
+    margin: 5px 0;
+}
+.ItemHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(218, 165, 32, 0.459);
+    color: #f2f2f2;
+    padding: 4px 2px ;
+    border-radius: 10px;
+    width: 100%;
+
+}

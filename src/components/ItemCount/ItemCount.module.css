@@ -1,0 +1,10 @@
+.contador{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.boton{
+    width: 25px;
+    height: 25px;
+}
