@@ -1,6 +1,6 @@
 const products = [
   {
-    id: 1,
+    id: "1",
     nombre: "Bulbasaur",
     price: 2000,
     category: "hierba",
@@ -9,7 +9,7 @@ const products = [
     description: 'Pokemon tipo hierba',
   },
   {
-    id: 2,
+    id: "2",
     nombre: "Ivysaur",
     price: 2000,
     category: "hierba",
@@ -18,7 +18,7 @@ const products = [
     description: 'Pokemon tipo hierba',
   },
   {
-    id: 3,
+    id: "3",
     nombre: "Venusaur",
     price: 2000,
     category: "hierba",
@@ -27,7 +27,7 @@ const products = [
     description: 'Pokemon tipo hierba',
   },
   {
-    id: 4,
+    id: "4",
     nombre: "Charmander",
     price: 2000,
     category: "fuego",
@@ -36,7 +36,7 @@ const products = [
     description: 'Pokemon tipo fuego',
   },
   {
-    id: 5,
+    id: "5",
     nombre: "Charmeleon",
     price: 2000,
     category: "fuego",
@@ -45,7 +45,7 @@ const products = [
     description: 'Pokemon tipo fuego',
   },
   {
-    id: 6,
+    id: "6",
     nombre: "Charizard",
     price: 2000,
     category: "fuego",
@@ -54,7 +54,7 @@ const products = [
     description: 'Pokemon tipo fuego',
   },
   {
-    id: 7,
+    id: "7",
     nombre: "Squirtle",
     price: 2000,
     category: "agua",
@@ -63,7 +63,7 @@ const products = [
     description: 'Pokemon tipo agua',
   },
   {
-    id: 8,
+    id: "8",
     nombre: "Wartortle",
     price: 2000,
     category: "agua",
@@ -72,7 +72,7 @@ const products = [
     description: 'Pokemon tipo agua',
   },
   {
-    id: 9,
+    id: "9",
     nombre: "Blastoise",
     price: 2000,
     category: "agua",
@@ -101,7 +101,7 @@ export const getProductById = (productId) => {
 export const getProductsByCategory = (productsCategory) => {
   return new Promise ((resolve) => {
       setTimeout(() => {
-          resolve(products.map(prod => prod.category === productsCategory))
+          resolve(products.filter(prod => prod.category === productsCategory))
       }, 500)
   })
 }
