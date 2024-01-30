@@ -5,7 +5,7 @@ const products = [
     price: 2000,
     category: "hierba",
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
-    stock: 1,
+    stock: 4,
     description: 'Pokemon tipo hierba',
   },
   {
@@ -14,7 +14,7 @@ const products = [
     price: 2000,
     category: "hierba",
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg",
-    stock: 1,
+    stock: 6,
     description: 'Pokemon tipo hierba',
   },
   {
@@ -23,7 +23,7 @@ const products = [
     price: 2000,
     category: "hierba",
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg",
-    stock: 1,
+    stock: 8,
     description: 'Pokemon tipo hierba',
   },
   {
@@ -32,7 +32,7 @@ const products = [
     price: 2000,
     category: "fuego",
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/4.svg",
-    stock: 1,
+    stock: 2,
     description: 'Pokemon tipo fuego',
   },
   {
@@ -41,7 +41,7 @@ const products = [
     price: 2000,
     category: "fuego",
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/5.svg",
-    stock: 1,
+    stock: 5,
     description: 'Pokemon tipo fuego',
   },
   {
@@ -50,7 +50,7 @@ const products = [
     price: 2000,
     category: "fuego",
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg",
-    stock: 1,
+    stock: 6,
     description: 'Pokemon tipo fuego',
   },
   {
@@ -59,7 +59,7 @@ const products = [
     price: 2000,
     category: "agua",
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/7.svg",
-    stock: 1,
+    stock: 4,
     description: 'Pokemon tipo agua',
   },
   {
@@ -68,7 +68,7 @@ const products = [
     price: 2000,
     category: "agua",
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/8.svg",
-    stock: 1,
+    stock: 7,
     description: 'Pokemon tipo agua',
   },
   {
@@ -77,7 +77,7 @@ const products = [
     price: 2000,
     category: "agua",
     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/9.svg",
-    stock: 1,
+    stock: 2,
     description: 'Pokemon tipo agua',
   },
 ]

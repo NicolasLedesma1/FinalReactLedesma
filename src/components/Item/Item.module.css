@@ -22,3 +22,7 @@
     width: 100%;
 
 }
+.detalle{
+    border: 2px solid rgb(216, 175, 73);
+    background-color: rgba(214, 171, 60, 0.418);
+}

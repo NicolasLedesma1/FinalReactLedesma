@@ -1,4 +1,4 @@
-import { CardItem ,ItemImg,ItemHeader } from "./Item.module.css";
+import { CardItem ,ItemImg,ItemHeader,detalle } from "./Item.module.css";
 import { Link } from "react-router-dom";
 
 const Item = ({ id, nombre, img, price, stock, category}) => {
@@ -17,7 +17,7 @@ const Item = ({ id, nombre, img, price, stock, category}) => {
         <p> Stock Disponible: {stock}</p>
       </section>
       <footer >
-        <Link to={`/item/${id}`}> ver detalle </Link>
+        <Link to={`/item/${id}`} className= {detalle}> ver detalle </Link>
       </footer>
     </article>
   );
