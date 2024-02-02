@@ -4,7 +4,7 @@ import { CardItem ,ItemImg,ItemHeader } from "./ItemDetail.module.css";
 import {Link} from 'react-router-dom'
 import { CartContext } from "../../context/CartContext";
 
-const ItemDetail = ({ id, nombre, img, price, description }) => {
+const ItemDetail = ({ id, nombre, img, price, description, stock }) => {
   const [quantityAdded, SetQuantityAdded] = useState(0)
 
   const {addItem} = useContext(CartContext)
@@ -28,13 +28,14 @@ const ItemDetail = ({ id, nombre, img, price, description }) => {
         <section>
           <p> Precio ${price} </p>
           <p> Descripcion: {description} </p>
+          <p> stock : {stock} </p>
         </section>
         <footer >
         {
           quantityAdded > 0 ? (
             <Link to = '/cart'> Terminar compra </Link>
           ) : (
-          <ItemCount inicial ={1} stock ={10} onAdd={handleOnAdd}/>)
+          <ItemCount inicial ={1} stock ={stock} onAdd={handleOnAdd}/>)
         }
         </footer>
       </article>
