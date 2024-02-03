@@ -1,0 +1,6 @@
+.cartItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color:  rgba(218, 165, 32, 0.459);
+}
