@@ -23,7 +23,6 @@ const ItemDetailContainer = () => {
 
         getDoc(productDocument)
             .then(queryDocumentSnapshot =>{
-                console.log(queryDocumentSnapshot);
                 const fields =queryDocumentSnapshot.data()
                 const productAdapted ={id : queryDocumentSnapshot.id, ...fields}
                 setProduct(productAdapted)

@@ -1,28 +1,28 @@
-import { createContext , useState } from "react";
+import { createContext , useState , useContext } from "react";
 
 
-export const CartContext = createContext({
+const CartContext = createContext({
     cart : [],
     addItem : ()=> {},
     removeItem : ()=> {},
     clearCart : ()=> {},
+
 })
 
 export const CartProvider = ({ children }) => {
     const [cart , setCart] = useState ([])
 
-    console.log(cart);
 
-    const addItem =(item, quantity) => {
-        if(!isInCart(item.id)) {
-            setCart(prev => [...prev, {...item, quantity}])
+    const addItem =(productToAdd) => {
+        if(!isInCart(productToAdd.id)) {
+            setCart(prev => [...prev, productToAdd])
         }else{
             console.log('El producto ya fue agregado');
         }
     }
 
-    const removeItem = (itemId) =>{
-        const cartUpdated = cart.filter(prod => prod.id !== itemId)
+    const removeItem = (id) =>{
+        const cartUpdated = cart.filter(prod => prod.id !== id)
         setCart(cartUpdated)
     }
 
@@ -30,14 +30,41 @@ export const CartProvider = ({ children }) => {
         setCart([])
     }
 
-    const isInCart =(itemId) => {
-        return cart.some (prod => prod.id === itemId)
+    const isInCart =(id) => {
+        return cart.some (prod => prod.id === id)
     }
 
-    return(
-        <CartContext.Provider value={{ cart, addItem, removeItem,clearCart}}>
+    const getTotalQuantity= () =>{
+        let conteo = 0
+        
+        cart.forEach(prod => {
+            conteo += prod.quantity
+        })
+    
+        return conteo
+      }
+
+      const totalQuantity =getTotalQuantity()
+
+      const getTotal =() =>{
+        let conteo = 0
+        
+        cart.forEach(prod => {
+            conteo += prod.quantity * prod.price
+        })
+    
+        return conteo
+      }
+
+      const total = getTotal()
+   
+   return(
+        <CartContext.Provider value={{ cart, addItem, removeItem, clearCart, totalQuantity, total}}>
             { children }
         </CartContext.Provider>
     )
 
+}
+export const useCart = () => {
+    return useContext(CartContext)
 }

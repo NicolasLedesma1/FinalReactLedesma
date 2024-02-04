@@ -1,5 +1,4 @@
-import { useContext } from "react"
-import { CartContext } from "../../context/CartContext"
+import { useCart } from "../../context/CartContext"
 import { Link } from "react-router-dom"
 import {cartItem} from "./cart.module.css"
 
@@ -7,7 +6,7 @@ import {cartItem} from "./cart.module.css"
 
 
 const Cart =() =>{
-    const {cart, clearCart, totalQuantity, total} = useContext(CartContext)
+    const {cart, clearCart, totalQuantity, total , removeItem} = useCart ()
     if (totalQuantity === 0){
         return (
             <>
@@ -34,7 +33,7 @@ const Cart =() =>{
                 }
             <h3> Total : ${total} </h3>
             <button onClick={() => clearCart()}> Vaciar Carrito </button>
-            <Link to ='checkout'> Checkout</Link>
+            <Link to ='/checkout'> Checkout</Link>
         </>
     )
 }
