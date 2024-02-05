@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDeH4LyR9ipkBQMZNsF09iirGY-YOZt7lo",
-  authDomain: "pokecuadros.firebaseapp.com",
-  projectId: "pokecuadros",
-  storageBucket: "pokecuadros.appspot.com",
-  messagingSenderId: "805358408248",
-  appId: "1:805358408248:web:da0ac5421dc86c6165cccd"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.storageBucket,
+  messagingSenderId: import.meta.env.messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 

@@ -1,11 +1,13 @@
 .carrito{
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
+    border-radius: 30%;
+    margin: 1%;
+    padding: 1%;
+    max-width: 100px;
+    max-height: 100px;
 }
 .pokebola{
     width: 50px;
     padding: 5px;
-    border: 2px solid crimson;
-    border-radius: 40%;
+    margin: 20px;
+
 }

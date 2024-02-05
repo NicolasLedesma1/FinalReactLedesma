@@ -1,0 +1,44 @@
+.formulario{
+    max-width: 800px;
+    max-height: 400px;
+    width: 50%;
+    height: 50%;
+    display: grid ;
+    grid-template-columns: 1fr;
+    background-color: rgba(184, 135, 11, 0.473) ;
+    justify-content: center;   
+    align-items: center;
+    margin-left: 550px;
+}
+
+.detalle{
+    width: 90%;
+    height: 50%;
+    font-size: x-large;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+
+}
+
+.detalle2{
+    width: 75%;
+    height: 50%;
+    font-size: x-large;
+    margin: 10px;
+
+
+}
+
+.boton{
+    width: 75%;
+    margin: 10px;
+    margin-left: 100px;
+    font-size: large;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}

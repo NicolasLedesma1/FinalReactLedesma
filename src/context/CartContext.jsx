@@ -17,7 +17,17 @@ export const CartProvider = ({ children }) => {
         if(!isInCart(productToAdd.id)) {
             setCart(prev => [...prev, productToAdd])
         }else{
-            console.log('El producto ya fue agregado');
+            const cartUpdated = cart.map(prod=>{
+                if(prod.id === productToAdd.id){
+                    return{
+                        ...prod,
+                        quantity: productToAdd.quantity
+                    }
+                }else {
+                    return prod
+                }
+            })
+            setCart(cartUpdated)
         }
     }
 
