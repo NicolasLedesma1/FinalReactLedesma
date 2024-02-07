@@ -1,6 +1,6 @@
 import { useCart } from "../../context/CartContext"
 import { Link } from "react-router-dom"
-import {cartItem} from "./cart.module.css"
+import {cartItem, button} from "./cart.module.css"
 
 
 
@@ -10,14 +10,14 @@ const Cart =() =>{
     if (totalQuantity === 0){
         return (
             <>
-                <h1>No hay items en el carrito</h1>
-                <Link to='/'> Productos </Link>
+                <h1>No hay Pokemones atrapados</h1>
+                <Link to='/'> Ir a capturar </Link>
             </>
         )
     }
     return(
         <>
-        <h1>Carrito</h1>
+        <h1>Pokemones capturados</h1>
                 {
                     cart.map(prod => {
                         return (
@@ -26,13 +26,13 @@ const Cart =() =>{
                                 <h3>Cantidad: {prod.quantity}</h3>
                                 <h3>Precio unidad: ${prod.price}</h3>
                                 <h3>Subtotal: ${prod.quantity * prod.price}</h3>
-                                <button onClick={() => removeItem(prod.id)}>Eliminar</button>
+                                <button onClick={() => removeItem(prod.id)}>Liberar</button>
                             </div>
                         )
                     })
                 }
             <h3> Total : ${total} </h3>
-            <button onClick={() => clearCart()}> Vaciar Carrito </button>
+            <button onClick={() => clearCart()} className={button}> Liberar a todos </button>
             <Link to ='/checkout'> Checkout</Link>
         </>
     )

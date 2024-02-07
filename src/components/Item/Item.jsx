@@ -17,7 +17,7 @@ const Item = ({ id, nombre, img, price, stock, category}) => {
         <p> Stock Disponible: {stock}</p>
       </section>
       <footer >
-        <Link to={`/item/${id}`} className= {detalle}> ver detalle </Link>
+        <Link to={`/item/${id}`} className= {detalle}> Pokedex </Link>
       </footer>
     </article>
   );

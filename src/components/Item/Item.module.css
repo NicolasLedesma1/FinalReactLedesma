@@ -5,6 +5,8 @@
     border-radius: 20px;
     background-color: rgba(184, 135, 11, 0.473);
     padding: 5px 0;
+    border: ridge black 4px;
+    
 }
 .ItemImg{
     width: 150px;

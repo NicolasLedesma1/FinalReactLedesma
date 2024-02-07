@@ -1,32 +1,43 @@
 import { useEffect, useState } from "react"
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from "react-router-dom"
-import { db } from "../../services/firebase/firebaseConfig"
-import {getDoc , doc} from "firebase/firestore"
+import { getProductById } from "../../services/firebase/firestore/products"
+import {atrapar} from './ItemDetailContainer.module.css'
+import { useNotification } from "../../notificaciones/Notificaciones";
 
 
 const ItemDetailContainer = () => {
+    const [loading,setLoading] = useState(true)
     const [product, setProduct] = useState(null)
-
+    const {showNotification} = useNotification()
     const { itemId } = useParams ()
 
     useEffect(() => {
-        const productDocument = doc(db, 'products', itemId)
+        setLoading (true)
 
-        getDoc(productDocument)
-            .then(queryDocumentSnapshot =>{
-                const fields =queryDocumentSnapshot.data()
-                const productAdapted ={id : queryDocumentSnapshot.id, ...fields}
-                setProduct(productAdapted)
+        getProductById(itemId)
+            .then(product =>{
+                setProduct(product)
             })
             .catch(error =>{
-                console.log('Hubo un error');
+                showNotification('error' ,'Error al buscar el Pokemon')
+            })
+            .finally(()=>{
+                setLoading(false)
             })
 
     }, [itemId])
-    
+    if(loading){
+        return <h1>Buscando Pokemon</h1>
+    }
+
+    if(!product){
+        return <h1>El Pokemon se escapo</h1>
+    }
+
     return(
         <div> 
+            <h2 className={atrapar}>Atrápalo!</h2>
             <ItemDetail {...product}/>
         </div>
     )

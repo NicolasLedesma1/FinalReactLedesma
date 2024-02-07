@@ -13,7 +13,7 @@ const NavBar = () => {
       <div className={navegador}>
         <NavLink to={`/category/fuego`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemon Fuego</NavLink>
         <NavLink to={`/category/agua`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemon agua</NavLink>
-        <NavLink to={`/category/hierba`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemon hieba</NavLink>
+        <NavLink to={`/category/hierba`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemon hierba</NavLink>
         <CartWidget/>
       </div>
     </header>

@@ -9,17 +9,16 @@
     border-radius: 20px;
     position: relative;
     left: 25%;
+    border: ridge black 4px;
 }
 .contenedor .marca {
     margin: 5px;
     width: 100px;
 }
 
-
-.navegador{
-    padding: 20px;
-    margin: 20px;
+.navegador a {
+    margin-right: 50px;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: x-large;
-    row-gap: 30px;
-}
-
+  }

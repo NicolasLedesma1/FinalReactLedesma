@@ -80,15 +80,15 @@ const Checkout = () =>{
         <form onSubmit={handleSubmit} className={formulario}>
             <div>
               <label className={detalle} htmlFor="nombre">Nombre:</label>
-              <input className={detalle2} type="text" id="nombre" name="nombre" value={userData.nombre} onChange={handleInputChange}/>
+              <input className={detalle2} type="text" id="nombre" name="nombre" value={userData.nombre} onChange={handleInputChange} required/>
             </div>
             <div>
               <label className={detalle} htmlFor="apellido">Apellido:</label>
-              <input className={detalle2} type="text" id="apellido" name="apellido" value={userData.apellido} onChange={handleInputChange}/>
+              <input className={detalle2} type="text" id="apellido" name="apellido" value={userData.apellido} onChange={handleInputChange} required/>
             </div>
             <div>
               <label className={detalle} htmlFor="telefono">Teléfono:</label>
-              <input className={detalle2} type="tel" id="telefono" name="telefono" value={userData.telefono} onChange={handleInputChange}/>
+              <input className={detalle2} type="tel" id="telefono" name="telefono" value={userData.telefono} onChange={handleInputChange} required/>
             </div>
             <button className={boton} type="submit">Generar orden</button>
         </form>
