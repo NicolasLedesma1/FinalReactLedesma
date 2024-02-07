@@ -22,7 +22,8 @@ const ItemListContainer = ({greeting}) => {
         
         getProducts(categoryId)
             .then(products =>{
-                setProducts(products)
+                const sortedProducts = products.sort((a, b) => a.order - b.order);
+                setProducts(sortedProducts);
             })
             .catch(error =>{
                 showNotification('error' ,'Error al buscar los Pokemons')
