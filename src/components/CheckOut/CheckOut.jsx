@@ -22,49 +22,49 @@ const Checkout = () =>{
         }));
       };
     
-      const createOrder =  async (userData) =>{
-        const objOrder ={
-            comprador: userData,
-            items : cart,
-            total
-        }
+    const createOrder =  async (userData) =>{
+      const objOrder ={
+          comprador: userData,
+          items : cart,
+          total
+      }
 
-        const batch = writeBatch(db)
-        const outOfStock = []
+      const batch = writeBatch(db)
+      const outOfStock = []
 
-        const ids = cart.map(prod => prod.id)
+      const ids = cart.map(prod => prod.id)
 
-        const productsCollection = query(collection(db, 'products'), where (documentId(), 'in', ids))
+      const productsCollection = query(collection(db, 'products'), where (documentId(), 'in', ids))
         
 
-        const querySnapshot = await getDocs(productsCollection)
-        const { docs } = querySnapshot
+      const querySnapshot = await getDocs(productsCollection)
+      const { docs } = querySnapshot
 
-        docs.forEach(doc =>{
-            const fields = doc.data()
-            const stockDb = fields.stock
+      docs.forEach(doc =>{
+          const fields = doc.data()
+          const stockDb = fields.stock
 
-            const productsAddedToCart = cart.find(prod => prod.id === doc.id)
-            const prodQuantity = productsAddedToCart.quantity
+          const productsAddedToCart = cart.find(prod => prod.id === doc.id)
+          const prodQuantity = productsAddedToCart.quantity
 
-            if(stockDb >= prodQuantity) {
-                batch.update(doc.ref,{ stock: stockDb - prodQuantity})
-            }else{
-                outOfStock.push({id: doc.id, ...fields})
-            }
-        })
-        if(outOfStock.length === 0){
-            batch.commit()
-            
-            const orderCollection = collection(db,'orders')
+          if(stockDb >= prodQuantity) {
+              batch.update(doc.ref,{ stock: stockDb - prodQuantity})
+          }else{
+              outOfStock.push({id: doc.id, ...fields})
+          }
+      })
+      if(outOfStock.length === 0){
+          batch.commit()
+          
+          const orderCollection = collection(db,'orders')
 
-            const {id} = await addDoc(orderCollection, objOrder) 
-            setOrderId(id)
+          const {id} = await addDoc(orderCollection, objOrder) 
+          setOrderId(id)
 
-            clearCart()
-        } else {
-            console.log('error no hay productos disponibles');
-        }
+          clearCart()
+      } else {
+          console.log('error no hay productos disponibles');
+      }
     }
     const handleSubmit = (e) => {
         e.preventDefault();

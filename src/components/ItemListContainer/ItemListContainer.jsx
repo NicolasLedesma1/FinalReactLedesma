@@ -12,6 +12,7 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() =>{
         if(categoryId) document.title = 'PokeSquares: ' + categoryId
+        
         return ()=> {
             document.tittle = 'PokeSquares'
         }
