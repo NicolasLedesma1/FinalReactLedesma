@@ -11,9 +11,9 @@ const NavBar = () => {
       <img src={logo} className={marca} alt="logo-Empresa" />
       </Link>
       <div className={navegador}>
-        <NavLink to={`/category/fuego`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemon Fuego</NavLink>
-        <NavLink to={`/category/agua`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemon agua</NavLink>
-        <NavLink to={`/category/hierba`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemon hierba</NavLink>
+        <NavLink to={`/category/fuego`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemones tipo Fuego</NavLink>
+        <NavLink to={`/category/agua`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemones tipo agua</NavLink>
+        <NavLink to={`/category/hierba`} className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}> Pokemones tipo hierba</NavLink>
         <CartWidget/>
       </div>
     </header>
