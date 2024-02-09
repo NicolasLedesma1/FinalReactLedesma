@@ -24,7 +24,7 @@ y en caso de querer usar las imagenes de los pokemon en la img de la BD copian e
 ademas los datos que van a necesitar en la BD  para que todo funcione correctamente son
 |CAMPO|TIPO|DATO|
 | ------ | ------ |------ |
-| category | string |hierba,fuego,agua(en caso de agregar mas tipos deberan agregar al nav para los filtros|
+| category | string |hierba,fuego,agua(en caso de agregar mas tipos deberan agregar al nav para los filtros)|
 | description | string |lo que quieran|
 | img | string |el link de img con el numero correspondiente| 
 | nombre| string |nombre del pokemon|
@@ -34,11 +34,11 @@ ademas los datos que van a necesitar en la BD  para que todo funcione correctame
 
 una vez generada la base de datos, ya deberia estar listo para operar.
 
-##Como iniciar
+## Como iniciar
 $ git clone https://github.com/NicolasLedesma1/FinalReactLedesma.git
 $ cd ecommerce1
 $ npm install
 $ npm run dev
 
-###Aplicacion funcionando
+## Aplicacion funcionando
 https://final-react-ledesma-5chhx2u72-nicolasledesma1s-projects.vercel.app
